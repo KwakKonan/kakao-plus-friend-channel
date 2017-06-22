@@ -29,6 +29,7 @@ def parse_content(request):
             if serializer.is_valid():
 
                 content = data['content']
+                print(content)
 
                 for index, value in enumerate(regex_array):
                     pattern = re.compile(value)
