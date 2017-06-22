@@ -42,11 +42,6 @@ def class_map_info_detail(request, className):
 
         data = {
             "text": "",
-            "photo": {
-              "url": "https://search1.daumcdn.net/cfile/233B6D355673A53422",
-              "width": 640,
-              "height": 480
-            },
             "message_button": {
               "label": "",
               "url": ""
