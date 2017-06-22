@@ -65,7 +65,7 @@ def class_map_info_detail(request, className):
             "type": "text"
         }
 
-        return HttpResponse(json.dumps(a, ensure_ascii=False).encode('utf8'))
+        return HttpResponse(json.dumps(a, ensure_ascii=False).encode('utf8'), content_type='application/json')
 
 
 def get(self, request, *args, **kwargs):
