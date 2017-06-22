@@ -18,5 +18,5 @@ from django.contrib import admin
 from keyboardAPI import views
 
 urlpatterns = urlpatterns = [
-    url(r'^/$', views.testResponse),
+    url(r'^$', views.testResponse),
 ]
