@@ -42,11 +42,6 @@ def class_map_info_detail(request, className):
 
         data = {
             "text": "",
-            "photo": {
-              "url": "https://search1.daumcdn.net/cfile/233B6D355673A53422",
-              "width": 640,
-              "height": 480
-            },
             "message_button": {
               "label": "",
               "url": ""
@@ -65,7 +60,9 @@ def class_map_info_detail(request, className):
             "type": "text"
         }
 
-        return HttpResponse(json.dumps(a, ensure_ascii=False).encode('utf8'), content_type='application/json')
+        json_str = json.dumps(a, ensure_ascii=False).encode('utf8')
+
+        return HttpResponse(json_str, content_type="application/json")
 
 
 def get(self, request, *args, **kwargs):

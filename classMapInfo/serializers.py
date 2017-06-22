@@ -21,10 +21,11 @@ class MessageButtonSerializer(serializers.ModelSerializer):
 
 
 class KakaoPlusFriendMessageSerializer(serializers.ModelSerializer):
-    photo = PhotoSerializer(many=False)
+    # photo = PhotoSerializer(many=False)
     message_button = MessageButtonSerializer(many=False)
 
     class Meta:
         model = Message
-        fields = ('text', 'photo', 'message_button')
+        fields = ('text', 'message_button')
+        # fields = ('text', 'photo', 'message_button')
 
