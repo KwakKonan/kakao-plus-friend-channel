@@ -60,7 +60,9 @@ def class_map_info_detail(request, className):
 
         a = {}
         a['message'] = res.data
-        a['keyboard'] = None
+        a['keyboard'] = {
+            "type": "text"
+        }
 
         return JsonResponse(a)
 

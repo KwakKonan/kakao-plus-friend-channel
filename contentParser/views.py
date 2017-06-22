@@ -1,11 +1,9 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from contentParser.serializers import KakaoPlusFriendMessageSerializer
 import re
 from classMapInfo.views import class_map_info_detail
-from classMapInfo.serializers import ClassMapInfoSerializer
-import json
 
 error_msg = '지원되지 않는 질문입니다.'
 regex_array = [
@@ -29,7 +27,6 @@ def parse_content(request):
             if serializer.is_valid():
 
                 content = data['content']
-                print(content)
 
                 for index, value in enumerate(regex_array):
                     pattern = re.compile(value)
