@@ -5,6 +5,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from classMapInfo.models import ClassMapInfo
 from classMapInfo.serializers import ClassMapInfoSerializer, KakaoPlusFriendMessageSerializer
+import json
 
 
 @csrf_exempt
@@ -64,9 +65,4 @@ def class_map_info_detail(request, className):
             "type": "text"
         }
 
-        return JsonResponse(a)
-
-
-def get(self, request, *args, **kwargs):
-    view = ClassMapInfo.as_view()
-    return view(request, *args, **kwargs)
+        return JsonResponse(json.dumps(a, ensure_ascii=False), safe=False)
